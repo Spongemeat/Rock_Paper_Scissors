@@ -42,7 +42,8 @@ return pick;
 //human choice
 
 function getHumanChoice(){
-
-
+  let input = prompt('Type your pick: ');
+  input = input.toLowerCase();
   
+  return input;
 }
