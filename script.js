@@ -1,7 +1,10 @@
 //computer choice
-let choice = getComputerChoice()
+let compChoice = getComputerChoice();
+let userChoice = getHumanChoice();
 
-console.log(choice)
+console.log('The computer picks ' + compChoice);
+console.log('You picked ' + userChoice);
+
 
 function getComputerChoice(){
 //randomly return one of the following string values: "Rock" "Paper" "Scissors"
@@ -36,3 +39,7 @@ return pick;
 }
 
 //human choice
+
+function getHumanChoice(){
+  
+}
