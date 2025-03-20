@@ -1,11 +1,13 @@
-//computer choice
+//get computer + user choice choice
 let userChoice = getHumanChoice();
 let compChoice = getComputerChoice();
 
+//declare scores, starting at 0
+let humanScore = 0;
+let computeScore = 0;
+
 console.log('You picked ' + userChoice);
 console.log('The computer picks ' + compChoice);
-
-
 
 function getComputerChoice(){
 //randomly return one of the following string values: "Rock" "Paper" "Scissors"
@@ -40,7 +42,6 @@ return pick;
 }
 
 //human choice
-
 function getHumanChoice(){
   let input = prompt('Type your pick: ');
   input = input.toLowerCase();
