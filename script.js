@@ -1,9 +1,10 @@
 //computer choice
-let compChoice = getComputerChoice();
 let userChoice = getHumanChoice();
+let compChoice = getComputerChoice();
 
-console.log('The computer picks ' + compChoice);
 console.log('You picked ' + userChoice);
+console.log('The computer picks ' + compChoice);
+
 
 
 function getComputerChoice(){
@@ -19,15 +20,15 @@ let pick = Math.floor((Math.random() * 3));
 switch(pick) {
   
   case 0:
-  pick = 'Rock'
+  pick = 'rock'
   break;
 
   case 1:
-  pick = 'Paper'
+  pick = 'paper'
   break;
 
   case 2:
-  pick = 'Scissors'
+  pick = 'scissors'
   break;
 
   default:
@@ -41,5 +42,7 @@ return pick;
 //human choice
 
 function getHumanChoice(){
+
+
   
 }
