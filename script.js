@@ -1,17 +1,16 @@
 //get computer + user choice choice
-let userChoice = getHumanChoice();
-let compChoice = getComputerChoice();
+let userChoice;
+let compChoice;
 
 //declare scores, starting at 0
 let humanScore = 0;
 let computerScore = 0;
 
-console.log('You picked ' + userChoice);
-console.log('The computer picks ' + compChoice);
+//console.log('You picked ' + userChoice);
+//console.log('The computer picks ' + compChoice);
 
-let play = playRound(userChoice, compChoice);
-
-console.log(play);
+console.log(playGame());
+//console.log(play);
 
 function getComputerChoice(){
   //pick equals random value between 0 and 1 rounded down, multiplied by 3
@@ -71,6 +70,7 @@ function playRound(userChoice, compChoice){
     }
     else {
       console.log('tie');
+      return;
     }
   }
 
@@ -89,6 +89,8 @@ function playRound(userChoice, compChoice){
     }
     else {
       console.log('tie');
+      return;
+
     }
   }
 
@@ -107,6 +109,32 @@ function playRound(userChoice, compChoice){
     }
     else {
       console.log('tie');
+      return;
+
     }
   }
+}
+
+//play 5 round game
+function playGame (){
+  //play 5 rounds
+    //for each round, declare winner of round number and current score count
+  for (let i = 0; i < 5; i++){
+    userChoice = getHumanChoice();
+    compChoice = getComputerChoice();
+
+    console.log('You picked ' + userChoice);
+    console.log('The computer picks ' + compChoice);
+
+    let play = playRound(userChoice, compChoice);
+  }
+  
+  if (humanScore > computerScore){
+    return 'You win!';
+  } 
+  else {
+    return 'Computer Wins!';
+  }
+
+  //
 }
