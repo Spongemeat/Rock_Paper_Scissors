@@ -1,13 +1,10 @@
-//get computer + user choice choice
 let userChoice;
 let compChoice;
 
 //declare scores, starting at 0
 let humanScore = 0;
 let computerScore = 0;
-
-//console.log('You picked ' + userChoice);
-//console.log('The computer picks ' + compChoice);
+let round = 0;
 
 console.log(playGame());
 //console.log(play);
@@ -17,19 +14,18 @@ function getComputerChoice(){
   let pick = Math.floor((Math.random() * 3));
 
   //assign the value a name, either Rock, Paper, or scissors
-    //if value equals 0, Rock
-    //if value equals 1, Paper
-    //if value equals 2, paper  
   switch(pick) {
-  
+    //if value equals 0, Rock
     case 0:
     pick = 'rock'
     break;
 
+    //if value equals 1, Paper
     case 1:
     pick = 'paper'
     break;
 
+    //if value equals 2, paper  
     case 2:
     pick = 'scissors'
     break;
@@ -52,8 +48,8 @@ function getHumanChoice(){
 
 //play a round
 function playRound(userChoice, compChoice){
-  let userWin = 'User wins the round';
-  let compWin = 'Computer wins the round';
+  let userWin = 'User wins ';
+  let compWin = 'Computer wins ';
 
   //while the users input equals rock
     //if computer equals scissors, user wins
@@ -70,7 +66,7 @@ function playRound(userChoice, compChoice){
     }
     else {
       console.log('tie');
-      return;
+      return 'tie ';
     }
   }
 
@@ -89,8 +85,7 @@ function playRound(userChoice, compChoice){
     }
     else {
       console.log('tie');
-      return;
-
+      return 'tie ';
     }
   }
 
@@ -109,32 +104,37 @@ function playRound(userChoice, compChoice){
     }
     else {
       console.log('tie');
-      return;
-
+      return 'tie ';
     }
   }
 }
 
 //play 5 round game
 function playGame (){
+
   //play 5 rounds
     //for each round, declare winner of round number and current score count
   for (let i = 0; i < 5; i++){
+
+    //get computer + user choice choice
+    round ++;
     userChoice = getHumanChoice();
     compChoice = getComputerChoice();
 
-    console.log('You picked ' + userChoice);
+    console.log('\n' +'You picked ' + userChoice);
     console.log('The computer picks ' + compChoice);
 
-    let play = playRound(userChoice, compChoice);
+    //play a single round and return winner
+    console.log(playRound(userChoice, compChoice) + 'round ' + round);
   }
   
   if (humanScore > computerScore){
-    return 'You win!';
+    return 'You win the game!';
   } 
-  else {
-    return 'Computer Wins!';
+  else if(humanScore > computerScore) {
+    return 'Computer wins the game!';
   }
-
-  //
+  else {
+    return 'Tie Game!';
+  }
 }
