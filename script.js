@@ -11,6 +11,8 @@ console.log('The computer picks ' + compChoice);
 
 let play = playRound(userChoice, compChoice);
 
+console.log(play);
+
 function getComputerChoice(){
   //pick equals random value between 0 and 1 rounded down, multiplied by 3
   let pick = Math.floor((Math.random() * 3));
@@ -51,34 +53,60 @@ function getHumanChoice(){
 
 //play a round
 function playRound(userChoice, compChoice){
-  //compare user input vs computer input
-  //paper > rock;
-  //rock > scissors;
-  //scissors > paper;
+  let userWin = 'User wins the round';
+  let compWin = 'Computer wins the round';
 
   //while the users input equals rock
     //if computer equals scissors, user wins
     //if computer equals paper, computer wins
     //if computer equals rock, tie
+ while (userChoice === 'rock'){
+    if (compChoice === 'scissors'){
+      humanScore ++;
+      return userWin;
+    }
+    else if (compChoice === 'paper'){ 
+      computerScore ++;
+      return compWin;
+    }
+    else {
+      console.log('tie');
+    }
+  }
 
   //while the user's input equals paper
     //if computer equals scissors, computer wins
     //if computer equals paper, tie
     //if computer equals rock, user wins
+  while (userChoice === 'paper'){
+    if (compChoice === 'rock'){
+      humanScore ++;
+      return userWin;
+    }
+    else if (compChoice === 'scissors'){ 
+      computerScore ++;
+      return compWin;
+    }
+    else {
+      console.log('tie');
+    }
+  }
 
   //while the user's input equals scissors
     //if computer equals scissors, tie
     //if computer equals paper, user wins
     //if computer equals rock, computer wins
-
-
-  //if(userChoice === 'rock' && compChoice === 'scissors'){
-    //console.log('user wins, rock beats scissors')
-    //humanScore++;
-  //}
-    //if user input beats computer input, humanScore++
-    //if computer input beats user input, comperScore++
-    //if tie, return
-  
-  //announce winner of round
+  while (userChoice === 'scissors'){
+    if (compChoice === 'paper'){
+      humanScore ++;
+      return userWin;
+    }
+    else if (compChoice === 'rock'){ 
+      computerScore ++;
+      return compWin;
+    }
+    else {
+      console.log('tie');
+    }
+  }
 }
