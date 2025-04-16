@@ -1,16 +1,20 @@
-//const rockButton = document.querySelector('#rock');
-//const paperButton = document.querySelector('#paper');
-//const scissorsButton = document.querySelector('#scissors');
+const rockButton = document.querySelector('.rock');
+const paperButton = document.querySelector('.paper');
+const scissorsButton = document.querySelector('.scissors');
 
-const rpsButton = document.querySelector('#btn');
+//const rpsButton = document.querySelector('#btn');
 
-rpsButton.addEventListener('click', () =>{
-  console.log('button clicked!');
-  playGame
+rockButton.addEventListener('click', () =>{
+  console.log('rock clicked!');
 });
 
+paperButton.addEventListener('click', () =>{
+  console.log('paper clicked!');
+});
 
-
+scissorsButton.addEventListener('click', () =>{
+  console.log('scissors clicked!');
+});
 //!--RPScode--!//
 
 let userChoice;
