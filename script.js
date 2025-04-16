@@ -62,6 +62,7 @@ function getComputerChoice(){
 //play a round
 function playRound(playerChoice, compChoice){
   round ++;
+  
  
   //while the users input equals rock
  while (playerChoice === 'rock'){
@@ -124,11 +125,13 @@ function playRound(playerChoice, compChoice){
   if (playerScore === 5){
     let winnerList = document.createElement('li');
     winnerList.textContent = 'You win the game!';
+    winnerList.style.color = 'green';
     scoreBoard.appendChild(winnerList);
   } 
   else if(computerScore === 5) {
     let winnerList = document.createElement('li');
     winnerList.textContent = 'Computer wins the game!';
+    winnerList.style.color = 'red';
     scoreBoard.appendChild(winnerList);
   }
 }
