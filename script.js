@@ -97,12 +97,9 @@ function playRound(userChoice, compChoice){
   }
 }
 
-//play 5 round game
+//play round
 function playGame (){
-
-  //play 5 rounds
     //for each round, declare winner of round number and current score count
-  for (let i = 0; i < 5; i++){
 
     //get computer + user choice choice
     round ++;
@@ -114,7 +111,6 @@ function playGame (){
 
     //play a single round and return winner
     console.log(playRound(userChoice, compChoice) + 'round ' + round);
-  }
   
   if (humanScore > computerScore){
     return 'You win the game!';
