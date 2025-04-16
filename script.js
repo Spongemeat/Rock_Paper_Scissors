@@ -69,10 +69,10 @@ function playRound(playerChoice, compChoice){
   
   //create a list element
   let roundList = document.createElement('li');
-  //populate list element with score
-  roundList.style.cssText = 'list-style: none; padding: 0; margin: 0;'; 
-  roundList.textContent = 'test';
-  //append list element to scoreBoard
+  roundList.style.cssText = 
+    'list-style: none; padding: 0; margin: 0;'; 
+
+  roundList.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
   scoreBoard.appendChild(roundList);
 
   //while the users input equals rock
