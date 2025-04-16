@@ -2,10 +2,14 @@
 
 let playerChoice;
 let compChoice;
+let playerScore = 0;
+let computerScore = 0;
+let round = 0;
 
 const rockButton = document.querySelector('.rock');
 const paperButton = document.querySelector('.paper');
 const scissorsButton = document.querySelector('.scissors');
+const scoreBoard = document.querySelector('.scoreList');
 
 //button listeners
 rockButton.addEventListener('click', () =>{
@@ -26,11 +30,6 @@ scissorsButton.addEventListener('click', () =>{
   playRound(playerChoice, compChoice);
 });
 
-//div 
-//declare scores, starting at 0
-let playerScore = 0;
-let computerScore = 0;
-let round = 0;
 
 //!--RPScode--!//
 
@@ -67,6 +66,14 @@ function playRound(playerChoice, compChoice){
 
   let playerWin = 'Player wins ';
   let compWin = 'Computer wins ';
+  
+  //create a list element
+  let roundList = document.createElement('li');
+  //populate list element with score
+  roundList.style.cssText = 'list-style: none; padding: 0; margin: 0;'; 
+  roundList.textContent = 'test';
+  //append list element to scoreBoard
+  scoreBoard.appendChild(roundList);
 
   //while the users input equals rock
  while (playerChoice === 'rock'){
