@@ -59,91 +59,76 @@ function getComputerChoice(){
   return pick;
 }
 
-
 //play a round
 function playRound(playerChoice, compChoice){
   round ++;
-
-  let playerWin = 'Player wins ';
-  let compWin = 'Computer wins ';
-  
-  //create a list element
-  let roundList = document.createElement('li');
-  roundList.style.cssText = 
-    'list-style: none; padding: 0; margin: 0;'; 
-
-  roundList.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
-  scoreBoard.appendChild(roundList);
-
+ 
   //while the users input equals rock
  while (playerChoice === 'rock'){
     if (compChoice === 'scissors'){
-      playerScore ++;
-      return playerWin;
+      ++ playerScore;
+      break;
     }
     else if (compChoice === 'paper'){ 
-      computerScore ++;
-      return compWin;
+      ++ computerScore;
+      break;
     }
     else {
       console.log('tie');
-      return 'tie ';
+      break;
     }
   }
 
   //while the user's input equals paper
   while (playerChoice === 'paper'){
     if (compChoice === 'rock'){
-      playerScore ++;
-      return playerWin;
+      ++ playerScore;
+      break;
     }
     else if (compChoice === 'scissors'){ 
-      computerScore ++;
-      return compWin;
+      ++ computerScore;
+      break;
     }
     else {
       console.log('tie');
-      return 'tie ';
+      break;
     }
   }
 
   //while the user's input equals scissors
   while (playerChoice === 'scissors'){
     if (compChoice === 'paper'){
-      playerScore ++;
-      return playerWin;
+      ++ playerScore;
+      break;
     }
     else if (compChoice === 'rock'){ 
-      computerScore ++;
-      return compWin;
+      ++ computerScore;
+      break;
     }
     else {
       console.log('tie');
-      return 'tie ';
+      break;
     }
   }
-}
 
-//play round
-function playGame (){
-    //for each round, declare winner of round number and current score count
+  //create a list element
+  let result = document.createElement('li');
+  result.textContent = 
+    `You chose ${playerChoice}, Computer chose ${compChoice}`  
 
-    //get computer + user choice choice
-    round ++;
-    //playerChoice = getplayerChoice();
-    compChoice = getComputerChoice();
+  let roundList = document.createElement('li');
+  roundList.textContent = `Player: ${playerScore} - Computer: ${computerScore}`;
+  scoreBoard.appendChild(result);
+  scoreBoard.appendChild(roundList);
 
-    console.log('\n' +'You picked ' + playerChoice);
-    console.log('The computer picks ' + compChoice);
-
-    //play a single round and return winner
-    console.log(playRound(playerChoice, compChoice) + 'round ' + round);
-  
   if (playerScore === 5){
-    return 'You win the game!';
+    let winnerList = document.createElement('li');
+    winnerList.textContent = 'You win the game!';
+    scoreBoard.appendChild(winnerList);
   } 
   else if(computerScore === 5) {
-    return 'Computer wins the game!';
+    let winnerList = document.createElement('li');
+    winnerList.textContent = 'Computer wins the game!';
+    scoreBoard.appendChild(winnerList);
   }
-
 }
