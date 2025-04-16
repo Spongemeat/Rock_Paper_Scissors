@@ -1,3 +1,6 @@
+let playerChoice;
+let compChoice;
+
 const rockButton = document.querySelector('.rock');
 const paperButton = document.querySelector('.paper');
 const scissorsButton = document.querySelector('.scissors');
@@ -6,26 +9,31 @@ const scissorsButton = document.querySelector('.scissors');
 
 rockButton.addEventListener('click', () =>{
   console.log('rock clicked!');
+  playerChoice = 'rock';
+  playGame()
 });
 
 paperButton.addEventListener('click', () =>{
   console.log('paper clicked!');
+  playerChoice = 'paper';
+  playGame()
 });
 
 scissorsButton.addEventListener('click', () =>{
   console.log('scissors clicked!');
+  playerChoice = 'scissors';
+  playGame()
 });
+
+
 //!--RPScode--!//
 
-let userChoice;
-let compChoice;
-
 //declare scores, starting at 0
-let humanScore = 0;
+let playerScore = 0;
 let computerScore = 0;
 let round = 0;
 
-console.log(playGame());
+//console.log(playGame());
 //console.log(play);
 
 function getComputerChoice(){
@@ -55,7 +63,7 @@ function getComputerChoice(){
 }
 
 //human choice
-function getHumanChoice(){
+function getPlayerChoice(){
   let input = prompt('Type your pick: ');
   input = input.toLowerCase();
   
@@ -63,15 +71,15 @@ function getHumanChoice(){
 }
 
 //play a round
-function playRound(userChoice, compChoice){
-  let userWin = 'User wins ';
+function playRound(playerChoice, compChoice){
+  let playerWin = 'Player wins ';
   let compWin = 'Computer wins ';
 
   //while the users input equals rock
- while (userChoice === 'rock'){
+ while (playerChoice === 'rock'){
     if (compChoice === 'scissors'){
-      humanScore ++;
-      return userWin;
+      playerScore ++;
+      return playerWin;
     }
     else if (compChoice === 'paper'){ 
       computerScore ++;
@@ -84,10 +92,10 @@ function playRound(userChoice, compChoice){
   }
 
   //while the user's input equals paper
-  while (userChoice === 'paper'){
+  while (playerChoice === 'paper'){
     if (compChoice === 'rock'){
-      humanScore ++;
-      return userWin;
+      playerScore ++;
+      return playerWin;
     }
     else if (compChoice === 'scissors'){ 
       computerScore ++;
@@ -100,9 +108,9 @@ function playRound(userChoice, compChoice){
   }
 
   //while the user's input equals scissors
-  while (userChoice === 'scissors'){
+  while (playerChoice === 'scissors'){
     if (compChoice === 'paper'){
-      humanScore ++;
+      playerScore ++;
       return userWin;
     }
     else if (compChoice === 'rock'){ 
@@ -122,19 +130,19 @@ function playGame (){
 
     //get computer + user choice choice
     round ++;
-    userChoice = getHumanChoice();
+    //playerChoice = getplayerChoice();
     compChoice = getComputerChoice();
 
-    console.log('\n' +'You picked ' + userChoice);
+    console.log('\n' +'You picked ' + playerChoice);
     console.log('The computer picks ' + compChoice);
 
     //play a single round and return winner
-    console.log(playRound(userChoice, compChoice) + 'round ' + round);
+    console.log(playRound(playerChoice, compChoice) + 'round ' + round);
   
-  if (humanScore > computerScore){
+  if (playerScore > computerScore){
     return 'You win the game!';
   } 
-  else if(humanScore > computerScore) {
+  else if(playerScore > computerScore) {
     return 'Computer wins the game!';
   }
   else {
