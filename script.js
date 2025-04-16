@@ -15,17 +15,14 @@ function getComputerChoice(){
 
   //assign the value a name, either Rock, Paper, or scissors
   switch(pick) {
-    //if value equals 0, Rock
     case 0:
     pick = 'rock'
     break;
 
-    //if value equals 1, Paper
     case 1:
     pick = 'paper'
     break;
 
-    //if value equals 2, paper  
     case 2:
     pick = 'scissors'
     break;
@@ -52,9 +49,6 @@ function playRound(userChoice, compChoice){
   let compWin = 'Computer wins ';
 
   //while the users input equals rock
-    //if computer equals scissors, user wins
-    //if computer equals paper, computer wins
-    //if computer equals rock, tie
  while (userChoice === 'rock'){
     if (compChoice === 'scissors'){
       humanScore ++;
@@ -71,9 +65,6 @@ function playRound(userChoice, compChoice){
   }
 
   //while the user's input equals paper
-    //if computer equals scissors, computer wins
-    //if computer equals paper, tie
-    //if computer equals rock, user wins
   while (userChoice === 'paper'){
     if (compChoice === 'rock'){
       humanScore ++;
@@ -90,9 +81,6 @@ function playRound(userChoice, compChoice){
   }
 
   //while the user's input equals scissors
-    //if computer equals scissors, tie
-    //if computer equals paper, user wins
-    //if computer equals rock, computer wins
   while (userChoice === 'scissors'){
     if (compChoice === 'paper'){
       humanScore ++;
