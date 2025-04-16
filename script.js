@@ -1,3 +1,18 @@
+//const rockButton = document.querySelector('#rock');
+//const paperButton = document.querySelector('#paper');
+//const scissorsButton = document.querySelector('#scissors');
+
+const rpsButton = document.querySelector('#btn');
+
+rpsButton.addEventListener('click', () =>{
+  console.log('button clicked!');
+  playGame
+});
+
+
+
+//!--RPScode--!//
+
 let userChoice;
 let compChoice;
 
