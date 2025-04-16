@@ -8,19 +8,16 @@ const scissorsButton = document.querySelector('.scissors');
 //const rpsButton = document.querySelector('#btn');
 
 rockButton.addEventListener('click', () =>{
-  console.log('rock clicked!');
   playerChoice = 'rock';
   playGame()
 });
 
 paperButton.addEventListener('click', () =>{
-  console.log('paper clicked!');
   playerChoice = 'paper';
   playGame()
 });
 
 scissorsButton.addEventListener('click', () =>{
-  console.log('scissors clicked!');
   playerChoice = 'scissors';
   playGame()
 });
@@ -111,7 +108,7 @@ function playRound(playerChoice, compChoice){
   while (playerChoice === 'scissors'){
     if (compChoice === 'paper'){
       playerScore ++;
-      return userWin;
+      return playerWin;
     }
     else if (compChoice === 'rock'){ 
       computerScore ++;
@@ -139,13 +136,11 @@ function playGame (){
     //play a single round and return winner
     console.log(playRound(playerChoice, compChoice) + 'round ' + round);
   
-  if (playerScore > computerScore){
+  if (playerScore === 5){
     return 'You win the game!';
   } 
-  else if(playerScore > computerScore) {
+  else if(computerScore === 5) {
     return 'Computer wins the game!';
   }
-  else {
-    return 'Tie Game!';
-  }
+
 }
